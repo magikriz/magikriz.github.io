@@ -1,2 +1,2 @@
-# magikrz.github.io
+# magikriz.github.io
 Magikriz - Portfolio - Web Developer
