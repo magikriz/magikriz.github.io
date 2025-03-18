@@ -24,3 +24,29 @@ body {
 	color: snow;
 	opacity: 1;
 }
+
+h1 {
+	color : white;
+	text-align: center;
+	margin: 10rem;
+	font-size: 10rem;
+	font-weight: 900;
+	letter-spacing: 2px;
+}
+
+footer {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	
+	.trademark {
+		div {
+			color : white;
+			text-align: center;
+			margin: 1rem;
+			font-size: 4rem;
+			font-weight: 300;
+			letter-spacing: 1px;		
+		}
+	}
+}
