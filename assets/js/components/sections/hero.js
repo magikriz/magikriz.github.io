@@ -368,7 +368,7 @@
           });
       }
 
-      function refreshCanvasTheme() {
+      App.sections.refreshCanvasTheme = function() {
           const currentTheme = document.documentElement.dataset.theme;
 
           // Update spark colors and restart their positions
@@ -389,7 +389,7 @@
 
       document.querySelector("#themeToggle").addEventListener("click", () => {
           if (App.slider.currentlyInSection === 0) {
-              refreshCanvasTheme();  // <-- add this line
+              App.sections.refreshCanvasTheme();  // <-- add this line
           }
       });
 
@@ -678,5 +678,6 @@
   }
 
   App.sections.heroSparkgridUsual = function () {
+    App.sections.refreshCanvasTheme();
   }
 })(window.App);
