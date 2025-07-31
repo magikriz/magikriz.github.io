@@ -3,14 +3,13 @@
     'use strict';
 
     App.sections.techExpertise = function() {
-        console.log("hi 1");
         const introTime = 3000;
 
         const html = document.documentElement;
         const currentTheme = html.getAttribute('data-theme');
 
         const expertiseData = {
-          intro: "Skills that build the foundation and extend into excellence.",
+          intro: "Categorically listing my core, tech, creative and other skills that build my foundation and extend into excellence.",
           hexagons: [
             {
               order: 1,
@@ -350,6 +349,5 @@
     }
 
     App.sections.techExpertiseUsual = function () {
-        console.log("Usual Skill");
     }
 })(window.App);

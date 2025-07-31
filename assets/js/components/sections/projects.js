@@ -2,11 +2,10 @@
   "use strict";
 
   App.sections.projectGallery = function () {
-    console.log("hi 2");
 
     const galleryContent = {
       intro:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, totam?",
+        "Showcasing some of the highlights of my development and creative tech career so far.",
       projectData: [
         {
           id: "proj001",
@@ -571,18 +570,18 @@
           name: "Hotel Caps",
           team: "Self / Freelance",
           timeline: "June 2025 - Present",
-          link: "https://hotelcapsfamily.github.io",
+          link: "https://sparklingspur.github.io",
           isFeatured: true,
           technologies: ["Vue 3", "Nuxt Js", "Tailwind CSS", "Gsap", "GitHub Pages"],
-          role: "Total Rework of Hotel Website wth 4 Landing Pages, 8 Inner Pages and 18+ Sections.",
+          role: "Total Rework of Hotel Website wth 4 Landing Pages, 7 Inner Pages and 20+ Sections.",
           tasks: [
-            "Structured Vue 3 components for modular UI",
+            "Structured Vue 3 components built in Nuxt environment for modular UI",
             "Integrated Tailwind for responsive and modern UI styling using utility classes",
             "Configured Gsap and deployed on GitHub pages with GIT CLI"
           ],
           achievements: [
             "Achieved a modern, responsive SPA prototype with a modular design for easy future scalability",
-            "Deepened understanding of Vue 3 composition API"
+            "Deepened understanding of Static site builders, implemented detailed SEO"
           ],
           notes: "Ongoing – serves as a sandbox for modern front-end skills.",
           icon: "fa-solid fa-hotel",
@@ -1176,6 +1175,5 @@
   };
 
   App.sections.projectGalleryUsual = function () {
-    console.log("Usual Gallery");
   };
 })(window.App);

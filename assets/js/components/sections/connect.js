@@ -3,10 +3,9 @@
     'use strict';
     
     App.sections.letsConnect = function() {
-        console.log("hi 5");
 
         const connectData = {
-            intro: "Anslfs sjjgsldf sdlm;sd jlgwaif lhanDU ;jsrh[0[w asgjpgu owe."
+            intro: "If you felt a spark in this journey - reach out, and let’s create something extraordinary together."
         }
         
         const root = document.querySelector('.connect-content');
@@ -34,8 +33,8 @@
         socialBox.className = 'social-box';
 
         const socials = [
-            { href: '#', label: 'GitHub', icon: 'https://github.com/krizdev92' },
-            { href: '#', label: 'LinkedIn', icon: 'https://www.linkedin.com/in/kriz-live/' },
+            { href: 'https://github.com/krizdev92', label: 'GitHub', icon: 'fab fa-github' },
+            { href: 'https://www.linkedin.com/in/kriz-live/', label: 'LinkedIn', icon: 'fab fa-linkedin-in' },
             { href: 'https://www.instagram.com/krizzzlife/', label: 'Instagram', icon: 'fab fa-instagram' },
         ];
 
@@ -278,7 +277,6 @@
     }
     
     App.sections.letsConnectUsual = function() {
-        console.log("Usual Connect");
     }
 
 })(window.App);

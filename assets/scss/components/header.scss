@@ -35,7 +35,7 @@ $kai-glow: #6c5ce7;
       overflow: hidden;
       box-shadow: 0 0 12px 1px var(--accent-color);
       transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.2s ease;
-      animation: theme-appear 0.8s 8.4s ease-in both, glow 4s ease-in-out infinite;
+      animation: theme-appear 0.4s 13.6s ease-out both, glow 4s ease-in-out infinite;
   
       &:hover {
         box-shadow: 0 0 12px 8px var(--accent-color);
@@ -238,7 +238,7 @@ $kai-glow: #6c5ce7;
   justify-content: center;
   align-items: center;
   z-index: 1001;
-  animation: nav-appear .8s 8s ease-in both;
+  animation: nav-appear .4s 13.3s ease-out both;
 
   svg {
     fill: none;
@@ -470,45 +470,103 @@ body.custom-cursor--active .custom-cursor {
   animation: appear .1s appear 1.4s both;
 }
 
-@keyframes appear {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+  @keyframes appear {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+  }
+
+  :root {
+      --fire-red: #d90429;
+      --fire-orange: #ff9a00;
+      --fire-yellow: #fffbeB;
+
+      --ice-blue: #0003de;
+      --ice-cyan: #006eff;
+      --ice-white: #d4eaff;
+      
+      --path-1-length: 10700;
+      --path-2-length: 8250;
+      
+      /* --- Animation Timeline --- */
+      --draw-duration: 2.5s;
+      --infusion-duration: 1s;
+  }
+
+  @keyframes slow-pulse { from { transform: scale(1); } to { transform: scale(1.15); } }
+  @keyframes slow-aurora { from { transform: rotate(0deg) scale(1.2); } to { transform: rotate(360deg) scale(1.2); } }
+
+#kd-logo {
+
+  .logo-container {
+      width: 10rem;
+      margin-bottom: 2rem;
+      transform:  rotate(34.5deg) translate(-50%, -50%);
+      overflow: hidden;
+      position: fixed;
+      top: 50%;
+      left: calc(50% - 2.5rem);
+      z-index: 10001;
+      opacity: 0;
+
+      &.loaded {
+          animation: showLogo 0.1s forwards 1.4s, adjustLogo .5s 5.5s cubic-bezier(.69,.68,.24,.24) forwards, hideLogo 0.2s 9.8s forwards, placeLogo .8s 13s ease-out forwards ;
+      }
+  }
+
 }
 
-:root {
-    --fire-red: #d90429;
-    --fire-orange: #ff9a00;
-    --fire-yellow: #fffbeB;
+  @keyframes placeLogo { 
+      0% {
+        opacity: 0;
+        pointer-events: none;
+      }
+      10% { 
+        top: -3rem;
+        left: 4rem;
+        width: 6rem;
+        transform: none;
+        z-index: 10001;
+      }
+      69% {
+        opacity: 0;
+      }
+      70% {
+        opacity: 1;
+        pointer-events: all;
+      }
+      100% { 
+        top: 2rem;
+        left: 4rem;
+        width: 6rem;
+        transform: none;
+        z-index: 10001;
+        opacity: 1;
+        pointer-events: all;
+      }
+  }
 
-    --ice-blue: #0003de;
-    --ice-cyan: #006eff;
-    --ice-white: #d4eaff;
-    
-    --path-1-length: 10700;
-    --path-2-length: 8250;
-    
-    /* --- Animation Timeline --- */
-    --draw-duration: 2.5s;
-    --infusion-duration: 1s;
+/* --- ACT 1: STROKE ANIMATION --- */
+.stroke-animated-logo .path {
+      fill-opacity: 0;
+      stroke-width: 32;
+      transform: scale(0.8);
+      stroke-dasharray: var(--path-length);
+      stroke-dashoffset: var(--path-length);
+}
+.stroke-animated-logo #logo-path-1 { --path-length: var(--path-1-length); stroke: var(--ice-cyan); }
+.stroke-animated-logo #logo-path-2 { --path-length: var(--path-2-length); stroke: var(--fire-orange); }
+
+.stroke-animated-logo #logo-path-1 {
+      animation: draw-path var(--draw-duration) 1.5s cubic-bezier(0.975, 0.2, 0.0165, 1)  both, var(--infusion-duration) fill calc(var(--draw-duration) + 1.5s) cubic-bezier(0.1, 0.3, 0.3, 0.61) forwards;
 }
 
-@keyframes slow-pulse { from { transform: scale(1); } to { transform: scale(1.15); } }
-@keyframes slow-aurora { from { transform: rotate(0deg) scale(1.2); } to { transform: rotate(360deg) scale(1.2); } }
+.stroke-animated-logo #logo-path-2 {
+      animation: draw-path var(--draw-duration) 1.5s cubic-bezier(0.975, 0.2, 0.0165, 1) both, var(--infusion-duration) fill calc(var(--draw-duration) + 1.5s) cubic-bezier(0.1, 0.8, 0.97, 0.29) forwards;
+}
 
-.logo-container {
-    width: 10rem;
-    margin-bottom: 2rem;
-    transform:  rotate(34.5deg) translate(-50%, -50%);
-    overflow: hidden;
-    position: fixed;
-    top: 50%;
-    left: calc(50% - 2.5rem);
-    z-index: 10001;
-    opacity: 0;
-
-    &.loaded {
-        animation: showLogo 0.1s forwards 1.4s, adjustLogo .5s 5.5s cubic-bezier(.69,.68,.24,.24) forwards, placeLogo 3s 19s ease-in-out forwards;
-    }
+.animated-logo { 
+    width: 100%; 
+    height: auto;
 }
 
 @keyframes showLogo { 
@@ -526,47 +584,19 @@ body.custom-cursor--active .custom-cursor {
     }
     100% {
       left: calc(53% - 2.8rem);
-      z-index: 10;
     }
 }
 
-@keyframes placeLogo { 
-    40% { 
-      top: 6rem;
-      left: 4rem;
-      width: 6rem;
-      // transform: none;
-    }
-    70% { 
-      top: 4rem;
-      left: 4rem;
-      width: 6rem;
-      // transform: none;
-    }
-    100% { 
-      top: 2rem;
-      left: 4rem;
-      width: 6rem;
-      transform: none;
-      z-index: 10001;
-    }
-}
+@keyframes hideLogo { 
 
-.animated-logo { 
-    width: 100%; 
-    height: auto;
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      pointer-events: none;
+    }
 }
-
-/* --- ACT 1: STROKE ANIMATION --- */
-.path {
-    fill-opacity: 0;
-    stroke-width: 32;
-    transform: scale(0.8);
-    stroke-dasharray: var(--path-length);
-    stroke-dashoffset: var(--path-length);
-}
-#logo-path-1 { --path-length: var(--path-1-length); stroke: var(--ice-cyan); }
-#logo-path-2 { --path-length: var(--path-2-length); stroke: var(--fire-orange); }
 
 @keyframes draw-path { 
     0% { transform: scale(0.8);  }
@@ -579,14 +609,7 @@ body.custom-cursor--active .custom-cursor {
 }
 
 
-#logo-path-1 {
-    animation: draw-path var(--draw-duration) 1.5s cubic-bezier(0.975, 0.2, 0.0165, 1)  both, var(--infusion-duration) fill calc(var(--draw-duration) + 1.5s) cubic-bezier(0.1, 0.3, 0.3, 0.61) forwards;
-}
-
-#logo-path-2 {
-    animation: draw-path var(--draw-duration) 1.5s cubic-bezier(0.975, 0.2, 0.0165, 1) both, var(--infusion-duration) fill calc(var(--draw-duration) + 1.5s) cubic-bezier(0.1, 0.8, 0.97, 0.29) forwards;
-}
-
 .clickable {
   cursor: pointer;
 }
+

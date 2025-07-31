@@ -450,8 +450,8 @@
 
 .left,
 .right {
-  position: fixed;
-  top: 48.5%;
+  position: absolute;
+  top: -2rem;
   transform: translateY(-50%);
   font-size: 7rem;
   font-weight: 700;
@@ -459,13 +459,13 @@
   color: #fff;
 }
 .left {
-  right: calc(47% + 6rem);
+  right: calc(-3.6vw + 6rem);
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 .right {
-  left: calc(53% + 6rem);
+  left: calc(3vw + 6rem);
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -473,14 +473,27 @@
 .bracket {
   opacity: 0;
 }
+.left .bracket {
+  margin-right: 0.8rem;
+}
+.right .bracket {
+  margin-left: 0.8rem;
+}
 .bracket.visible {
   animation: fadeIn 1s forwards;
 }
 .text {
   opacity: 0;
+    display: inline-block;
+  transition: opacity 0.3s ease;
+    letter-spacing: 0.6rem;
+}
+.text .char {
+  display: inline-block;
+  transition: all 0.2s ease;
 }
 .text.visible {
-  animation: fadeIn 1s forwards;
+    opacity: 1;
 }
 @keyframes fadeIn {
   to {
@@ -501,7 +514,10 @@
   background: linear-gradient(90deg, #02af5e, #00d48e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-left: 0.2em;
+  margin-left: 0.5rem;
+}
+.text.green {
+    letter-spacing: -0.2rem;
 }
 .dud {
   color: #555;
@@ -527,7 +543,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: max-content;
-  animation: placeCreator 1.5s 15.5s ease-out forwards;
+//   animation: placeCreator 1.5s 15.5s ease-out forwards;
 
 }
 @keyframes placeCreator {
@@ -558,9 +574,10 @@
   transform: rotateY(-90deg);
   transform-style: preserve-3d;
   animation: spinIn 0.7s ease forwards;
-  color: var(--accent-color);
+  color: var(--switch-background-color);
   font-size: 3rem;
   padding-right: .4rem;
+  font-weight: 600;
 }
 @keyframes fadeInUp {
   to {
@@ -575,41 +592,51 @@
   }
 }
 
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 30%;
+    transform: translateX(-50%) translateY(2rem);
+    left: 50%;
+    overflow: hidden;
+    padding: 1rem;
+    transition: all 0.4s ease;
+    gap: 2rem;
+    animation: showButtonWrap .5s 7s ease-out forwards;
+}
+
+@keyframes showButtonWrap {
+    to {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
 /* Contact button styling */
 #contact-btn {
     padding: 1.1rem 1.7rem;
-    border: 2px solid var(--accent-color);
+    border: 2px solid var(--switch-background-color);
     background: transparent;
     color: white;
-    font-size: 2.4rem;
+    font-size: 2rem;
     cursor: pointer;
-    position: absolute;
-    bottom: 30%;
-    left: 50%;
     overflow: hidden;
+    position: relative;
     border-radius: 8px;
     opacity: 0;
-    transform: translateX(-50%) translateY(20px);
-    transition: transform 0.4s ease, opacity 0.4s ease;
-    animation: placeButton 1.5s 13s ease-out forwards;
+    transition: all 0.4s ease;
 }
 #contact-btn::before {
     content: "";
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: var(--h1-gradient-linear);
+    background: var(--switch-background-color);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.4s ease;
     z-index: 0;
-}
-@keyframes placeButton {
-    to {
-        bottom: 2rem;
-        transform: none;
-        left: 2rem;
-    }
 }
 #contact-btn:hover::before {
     transform: scaleX(1);
@@ -620,9 +647,100 @@
 }
 #contact-btn.show {
     opacity: 1;
-    transform: translateY(0) translateX(-50%);
+}
+
+#resume-btn {
+    padding: 1.1rem 1.7rem;
+    border: 2px solid var(--switch-background-color);
+    background: transparent;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+#resume-btn::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: var(--switch-background-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+    z-index: 0;
+}
+#resume-btn:hover::before {
+    transform: scaleX(1);
+}
+#resume-btn span {
+    position: relative;
+    z-index: 1;
+}
+#resume-btn.show {
+    opacity: 1;
 }
 
 .bracket { opacity: 0; filter: blur(10px); transition: opacity 1s ease, filter 1s ease; }
 .bracket.visible { opacity: 1; filter: blur(0); }
 .bracket.out { opacity: 0; filter: blur(10px); }
+
+
+#kd-hero-logo {
+
+  .logo-container {
+      width: 10rem;
+      margin-bottom: 2rem;
+      transform:  rotate(34.5deg) translate(-50%, -50%);
+      overflow: hidden;
+      position: absolute;
+      top: 50%;
+      z-index: 10;
+      opacity: 1;
+      left: calc(53% - 2.8rem);
+  }
+
+}
+
+.animated-logo { 
+    width: 100%; 
+    height: auto;
+}
+
+.scroll-next {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: transparent;
+  border: none;
+  font-size: 4rem;
+  animation: float 2s ease-in-out infinite;
+  z-index: 10;
+  color: var(--ice-white, #fff); /* Customize as per theme */
+}
+
+.scroll-next .caret {
+  display: inline-block;
+  animation: blink-caret 1s steps(2) infinite;
+}
+
+/* Floating up and down effect */
+@keyframes float {
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 1.5rem);
+  }
+}
+
+/* Blinking caret effect */
+@keyframes blink-caret {
+  50% {
+    opacity: 0;
+  }
+}

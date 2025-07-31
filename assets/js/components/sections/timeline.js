@@ -2,15 +2,14 @@
   "use strict";
 
   App.sections.careerTimeline = function () {
-    console.log("hi 4");
 
     const timelineContent = {
       intro:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos illo magnam cupiditate aliquam quasi at! Autem at laboriosam sed. Velit.",
+        "Traversing through my professional career... in Alps, or Grand Canyon?",
       timelineData: [
         {
           institution: "A New Beginning...",
-          institutionDescription: "June 2025 - "
+          institutionDescription: "August 2025 - "
         },
         {
           year: "Jan 2022 – Dec 2022",
@@ -294,31 +293,10 @@
 
     generateTimeline(timelineContent);
 
-    // App.sections.timeLineRemoveListeners = function (e) {
-    //   window.removeEventListener("wheel", App.slider.handleWheel, {
-    //     passive: true,
-    //   });
-    //   window.removeEventListener("keydown", App.slider.handleKey);
-    //   window.removeEventListener("touchstart", App.slider.handleTouchStart);
-    //   window.removeEventListener("touchend", App.slider.handleTouchEnd);
-    //   window.addEventListener("contextmenu", App.slider.disableRightClick);
-    //   console.log("disabled timeline");
-    //   window.removeEventListener("wheel", App.slider.handleWheel, {
-    //     passive: true,
-    //   });
-    //   window.removeEventListener("keydown", App.slider.handleKey);
-    //   window.removeEventListener("touchstart", App.slider.handleTouchStart);
-    //   window.removeEventListener("touchend", App.slider.handleTouchEnd);
-    //   window.addEventListener("contextmenu", App.slider.disableRightClick);
-    //   console.log("disabled timeline");
-    // };
-
-    App.sections.timeLineAddListeners = function (e) {};
 
     App.slider.enableInputs();
   };
 
   App.sections.careerTimelineUsual = function () {
-    console.log("Usual Timeline");
   };
 })(window.App);

@@ -3,9 +3,8 @@
 
   App.sections.heroSparkgrid = function () {
     //Hero Section Code
-    console.log("hi 0");
 
-    const introTime = 1000;
+    const introTime = 10000;
     const grid = document.querySelector(".grid-section");
   
     const container = document.createElement("div");
@@ -440,11 +439,22 @@
       };
 
       const grid = document.querySelector(".grid-section");
-      const intro = document.createElement('div'); intro.className='magikriz-intro';
-      grid.appendChild(intro);
+
+       
+      const heroText = document.createElement('div'); 
+      heroText.className='kd-hero-text';
+      grid.appendChild(heroText);
+  
+      const buttonContainer = document.createElement('div');
+      buttonContainer.className = 'button-container';
+      heroText.appendChild(buttonContainer);
       
       function generateIntro() {
         // Create elements
+        
+        const intro = document.createElement('div'); 
+        intro.className='magikriz-intro';
+        heroText.appendChild(intro);
         
         const left = document.createElement('div'); left.className='left';
         const brL = document.createElement('span'); brL.className='bracket'; brL.textContent='[';
@@ -459,18 +469,64 @@
 
         // Scrambler
         class TextScramble {
-          constructor(el, speed=60){this.el=el;this.chars='!<>-_\\/[]{}—=+*^?#________';this.update=this.update.bind(this);this.speed=speed;}
-          setText(newText){
-            const old=this.el.innerText, length=Math.max(old.length,newText.length);this.queue=[];
-            for(let i=0;i<length;i++){const from=old[i]||'',to=newText[i]||'',start=Math.floor(Math.random()*this.speed),end=start+Math.floor(Math.random()*this.speed);this.queue.push({from,to,start,end,char:null});}
-            cancelAnimationFrame(this.raf);this.frame=0;
-            return new Promise(res=>{this.resolve=res;this.update();});
+          constructor(el, speed = 60) {
+            this.el = el;
+            this.chars = '!<>-_\\/[]{}—=+*^?#________';
+            this.update = this.update.bind(this);
+            this.speed = speed;
           }
-          update(){let out='',complete=0;
-            for(const q of this.queue){if(this.frame>=q.end){complete++;out+=q.to;}else if(this.frame>=q.start){if(!q.char||Math.random()<0.28)q.char=this.chars[Math.floor(Math.random()*this.chars.length)];out+=`<span class='dud'>${q.char}</span>`;}else out+=q.from;}
-            this.el.innerHTML=out;
-            if(complete===this.queue.length) this.resolve(); else{this.frame++;this.raf=requestAnimationFrame(this.update);}        }
+
+          setText(newText) {
+            const old = this.el.textContent;
+            const length = Math.max(old.length, newText.length);
+            this.queue = [];
+
+            for (let i = 0; i < length; i++) {
+              const from = old[i] || '';
+              const to = newText[i] || '';
+              const start = Math.floor(Math.random() * this.speed);
+              const end = start + Math.floor(Math.random() * this.speed);
+              this.queue.push({ from, to, start, end, char: null });
+            }
+
+            cancelAnimationFrame(this.raf);
+            this.frame = 0;
+
+            return new Promise(res => {
+              this.resolve = res;
+              this.update();
+            });
+          }
+
+          update() {
+            let out = '';
+            let complete = 0;
+
+            for (const q of this.queue) {
+              if (this.frame >= q.end) {
+                complete++;
+                out += `<span class="char">${q.to}</span>`;
+              } else if (this.frame >= q.start) {
+                if (!q.char || Math.random() < 0.28) {
+                  q.char = this.chars[Math.floor(Math.random() * this.chars.length)];
+                }
+                out += `<span class="char dud">${q.char}</span>`;
+              } else {
+                out += `<span class="char">${q.from}</span>`;
+              }
+            }
+
+            this.el.innerHTML = out;
+
+            if (complete === this.queue.length) {
+              this.resolve();
+            } else {
+              this.frame++;
+              this.raf = requestAnimationFrame(this.update);
+            }
+          }
         }
+
 
         const fxL=new TextScramble(leftText,80);
         const fxR=new TextScramble(rightText,80);
@@ -483,7 +539,7 @@
           leftText.classList.add('visible');rightText.classList.add('visible');caretText.classList.add('visible');
           Promise.all([fxL.setText('M A G I'),fxR.setText('I Z')]).then(()=>{
             // 3. Caret
-            caretText.classList.add('visible');fxC.setText('›_').then(()=>{caretText.innerHTML="<span class='caret'>&rsaquo;_</span>";});
+            caretText.classList.add('visible');fxC.setText('❯_').then(()=>{caretText.innerHTML="<span class='caret'>&#10095;_</span>";});
           });
         },900);
 
@@ -492,7 +548,7 @@
 
         const creator = document.createElement('div');
         creator.id = 'creator';
-        grid.appendChild(creator);
+        heroText.appendChild(creator);
 
 
         const fxDelay = 0.1;
@@ -517,38 +573,94 @@
           });
           return text.length;
         }
+
         
         function generateContactButton(len, txt) {
           const btn = document.createElement('button');
           btn.id = 'contact-btn';
           btn.innerHTML = `<span>${txt}</span>`;
-          grid.appendChild(btn);
+          buttonContainer.appendChild(btn);
           setTimeout(() => {
             btn.classList.add('show');
           }, (len * fxDelay + 0.5) * 1000);
         }
 
+        function generateResumeButton(len, txt) {
+          const btn = document.createElement('button');
+          btn.id = 'resume-btn';
+          btn.innerHTML = `<span>${txt}</span>`;
+          buttonContainer.appendChild(btn);
+          setTimeout(() => {
+            btn.classList.add('show');
+          }, (len * fxDelay + 0.5) * 1000);
+          btn.addEventListener('click', () => {
+            const link = document.createElement('a');
+            link.href = '/resume/krizresume.pdf';
+            link.download = 'kriz-resume.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          });
+        }
+
+        function createHeroLogo() {
+          // Create wrapper div
+          const wrapper = document.createElement('div');
+          wrapper.className = 'hoverable clickable';
+          wrapper.id = "kd-hero-logo";
+
+          // Create inner logo container
+          const logoContainer = document.createElement('div');
+          logoContainer.className = 'logo-container loaded';
+          logoContainer.id = 'logoContainer';
+
+          // Create SVG element
+          const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+          svg.classList.add('animated-logo', 'loaded');
+          svg.setAttribute('width', '3415');
+          svg.setAttribute('height', '3608');
+
+          // Create <use> element to reference the <symbol>
+          const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+          use.setAttributeNS('http://www.w3.org/1999/xlink', 'href', '#magikriz-logo');
+
+          // Append use to svg, then to containers
+          svg.appendChild(use);
+          logoContainer.appendChild(svg);
+          wrapper.appendChild(logoContainer);
+
+          // Append to body or specific element
+          heroText.appendChild(wrapper); // or replace with document.getElementById('target').appendChild(wrapper);
+        }
+
         setTimeout(() => {
           const len = generateFooterText('creator', 'Weaved By : Krishnan K R'); 
           generateContactButton(len, 'Get in Touch');
+          generateResumeButton(len, 'Download Résumé');
+          createHeroLogo();
+
+          const scrollButton = document.createElement('div');
+          scrollButton.className = 'scroll-next';
+          scrollButton.innerHTML = '<i class="fa fa-angle-down" aria-hidden="true"></i>'; 
+          grid.appendChild(scrollButton);
+
           const btn = document.getElementById('contact-btn');
-          
           btn.addEventListener('click', () => {
             App.slider.scrollToSection(5);
           });
             
-          setTimeout(() => {
-            Promise.all([
-              fxL.setText(''), fxR.setText(''), fxC.setText('')
-            ]).then(()=>{
-              setTimeout(()=>{
-                brL.classList.remove('visible');
-                brR.classList.remove('visible');
-                brL.classList.add('out');
-                brR.classList.add('out');
-              },1000);
-            });
-          }, 5000); 
+          // setTimeout(() => {
+          //   Promise.all([
+          //     fxL.setText(''), fxR.setText(''), fxC.setText('')
+          //   ]).then(()=>{
+          //     setTimeout(()=>{
+          //       brL.classList.remove('visible');
+          //       brR.classList.remove('visible');
+          //       brL.classList.add('out');
+          //       brR.classList.add('out');
+          //     },1000);
+          //   });
+          // }, 5000); 
         }, 4000);
       }
 
@@ -566,6 +678,5 @@
   }
 
   App.sections.heroSparkgridUsual = function () {
-    console.log("Usual Grid");
   }
 })(window.App);

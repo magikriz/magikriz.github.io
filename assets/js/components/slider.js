@@ -65,14 +65,14 @@
           break;
         default:
           App.slider.enableInputs();
-          console.log("No matching section. " + index);
+          // console.log("No matching section. " + index);
       }
     }
 
     function playIntroIfNeeded(section) {
       const index = parseInt(section.getAttribute("data-order"));
       const isFirstVisit = !visitedSections.includes(index);
-      console.log(isFirstVisit);
+      // console.log(isFirstVisit);
       if (!isFirstVisit) {
         handleSectionUsual(index)
         App.slider.enableInputs();
@@ -82,7 +82,7 @@
       // Mark as visited immediately to avoid repeat animations
       visitedSections.push(index);
       // addPreviousSections(index);
-      console.log(visitedSections);
+      // console.log(visitedSections);
 
       const introDuration = getIntroDuration(section);
       section.classList.add("intro-active"); // You can use this to kick off animations
@@ -116,7 +116,7 @@
           break;
         default:
           App.slider.enableInputs();
-          console.log("No matching section. " + index);
+          // console.log("No matching section. " + index);
       }
     }
 
@@ -129,7 +129,7 @@
 
 
     App.slider.scrollToSection = function (index) {
-      console.log(index);
+      // console.log(index);
       if (index < 0 || index >= totalSections || isAnimating) {
         return; // skip but continue queue
         // return dequeue(); // skip but continue queue
@@ -143,7 +143,7 @@
         top: section.offsetTop,
         behavior: "smooth",
       });
-      console.log(`Scrolling to section ${index}`);
+      // console.log(`Scrolling to section ${index}`);
       App.slider.updateSliderProgress(index,6);
 
       // Wait for the scroll to finish (use setTimeout based on animationDuration)
@@ -273,7 +273,7 @@
       window.removeEventListener("touchstart", App.slider.handleTouchStart);
       window.removeEventListener("touchend", App.slider.handleTouchEnd);
       window.addEventListener("contextmenu", App.slider.disableRightClick);
-      console.log("disabled");
+      // console.log("disabled");
     };
 
     //enable all inputs
@@ -286,7 +286,7 @@
       window.addEventListener("touchstart", App.slider.handleTouchStart, {passive: true});
       window.addEventListener("touchend", App.slider.handleTouchEnd, {passive: true});
       window.removeEventListener("contextmenu", App.slider.disableRightClick);
-      console.log("enabled");
+      // console.log("enabled");
     };
 
     // Optional: Scroll trigger buttons

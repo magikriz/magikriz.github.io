@@ -3,17 +3,16 @@
     'use strict';
 
     App.sections.storyChakras = function() {
-        console.log("hi 1");
 
         const storyData = {
-            intro: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, repudiandae.",
+            intro: "About me - Unfolding my journey through ten elemental chakras — each one revealing a chapter.",
             chakras: [
                 {
                     order: 1,
                     image: "story-1.webp",
                     title: "Life Encoded",
                     story: [
-                        "Hi, I'm Krishnan. I'm a Developer. I believe being a developer is not just a profession but a style of life that defines how we perceive, analyze, dissect, plan, solve and prevail the challenges and needs that present before us in our lives, and how we sometimes create new features or optimize parts of ourselves, our life and surroundings into better versions.",
+                        "Hi, I'm Krishnan – a creative innovator, sparked by curiosity, driven by intent and fueled by passion, committed to building captivating and impactful digital experiences that inspires and impacts real world entities for the better. I'm a Developer. I believe being a developer is not just a profession but a style of life that defines how we perceive, analyze, dissect, plan, solve and prevail the challenges and needs that present before us in our lives, and how we sometimes create new features or optimize parts of ourselves, our life and surroundings into better versions.",
                     ],
                     keywords: ["developer", "way of life", "challenges", "features", "versions"],
                     icon: "fa-microchip"                    
@@ -293,14 +292,14 @@
             
             // Navigate to next or previous
             function goNext() {
-                console.log(currentOrder + " NEXT");
+                // console.log(currentOrder + " NEXT");
                 if (currentOrder == null) return;
                 const next = currentOrder === total ? 1 : currentOrder + 1;
                 currentOrder = next;
                 updatePopupContent(next);
             }
             function goPrev() {
-                console.log(currentOrder + " PREV");
+                // console.log(currentOrder + " PREV");
                 if (currentOrder == null) return;
                 const prev = currentOrder === 1 ? total : currentOrder - 1;
                 currentOrder = prev;
@@ -685,7 +684,6 @@
     }
 
     App.sections.storyChakrasUsual = function() {
-        console.log("Usual Chakras");
     }
 
 
