@@ -247,10 +247,21 @@
 		text-transform: none;
 		text-align: center;
 		color: var(--accent-color);
+		animation: introTextFadeIn .7s ease-in-out both;
 
 		strong {
 			font-weight: 700;
 		}
+	}
+}
+@keyframes introTextFadeIn {
+	0% {
+		opacity: 0;
+		transform: translateY(3rem);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }
 

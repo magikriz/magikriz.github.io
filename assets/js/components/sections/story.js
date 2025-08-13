@@ -12,9 +12,9 @@
                     image: "story-1.webp",
                     title: "Life Encoded",
                     story: [
-                        "Hi, I'm Krishnan – a creative innovator, sparked by curiosity, driven by intent and fueled by passion, committed to building captivating and impactful digital experiences that inspires and impacts real world entities for the better. I'm a Developer. I believe being a developer is not just a profession but a style of life that defines how we perceive, analyze, dissect, plan, solve and prevail the challenges and needs that present before us in our lives, and how we sometimes create new features or optimize parts of ourselves, our life and surroundings into better versions.",
+                        "Hi, I'm Krishnan – a creative innovator, sparked by curiosity, driven by intent and fueled by passion, committed to building captivating and impactful digital experiences that inspires and impacts real world entities for the better. I am a Creative Web Developer proficient in Front-End Development with hands-on experience working on multiple technologies and frameworks as an individual and as part of teams in multiple organizations, in creative, technical, management and administrative roles. I believe being a developer is not just a profession but a style of life that defines how we perceive, analyze, dissect, plan, solve and prevail the challenges and needs that present before us in our lives, and how we sometimes create new features or optimize parts of ourselves, our life and surroundings into better versions.",
                     ],
-                    keywords: ["developer", "way of life", "challenges", "features", "versions"],
+                    keywords: ["Krishnan", "impactful digital experiences", "Creative Web Developer", "creative, technical, management and administrative roles.", "style of life", "challenges", "features", "versions"],
                     icon: "fa-microchip"                    
                 },
                 {
@@ -42,9 +42,9 @@
                     image: "story-4.webp",
                     title: "Hello World",
                     story: [
-                        "Currently, I focus on mastering Front End Development. I plan on broadening my spectrum to other technologies, platforms and domains eventually. I have the experience working on multiple technologies and frameworks as an individual and as part of teams in multiple organizations, in creative, technical, management and administrative roles, and also independently as a freelance professonal. The advent of Generative AI LLMs is something I find very interested in and I would love to expand my horizons into that field as well to explore its possibilities on how it can assist our purpose in this modern digital world.",
+                        "Currently, I focus on mastering Web App Development from end to end with various stacks and frameworks. I plan on broadening my spectrum to other technologies, platforms and domains eventually. I’m passionate about this and I have the experience of working in different web technologies and frameworks on a variety of projects - open source and client work, as part of teams in multiple organizations, and also independently as an individual or a freelance professonal. The advent of Generative AI LLMs and ts growing role in software industry is something that has piqued my interest in the last few years and I look forward to expand my horizons into that field as well on all the possibilities of how it can assist our purposes in this and make a difference in this ever advancing digital world.",
                     ],
-                    keywords: ["Front End Development", "multiple technologies", "multiple organizations", "freelance professonal", "Generative AI LLMs", "modern digital world"],
+                    keywords: ["Front End Development", "variety of projects", "multiple organizations", "freelance professonal", "Generative AI LLMs", "digital world"],
                     icon: "fa-laptop-code"                    
                 },
                 {
@@ -102,9 +102,9 @@
                     image: "story-10.webp",
                     title: "The Twist in the Tale",
                     story: [
-                        "I believe that in every adversity, lies an opportunity for an epic comeback story, and I'm working towards mine - gathering information, refining skillset, levelling up, Training, cultivating confidence and hunting opportunities to make it a reality in career and life. With my best efforts, and destiny on my side, I shall accomplish it in the best way possible.",
+                        "I have experience handling / being part of every phase of a project - right from brainstorming ideas to deployment and maintenance, in professional structured work environments with teams for large projects and independently for freelance client works - on live projects or from the ground up, utilizing a variety of modern technologies and methods. The evolution of AI LLMs has significantly transformed the associated skillsets and updated the processing workflows within IT Projects in the Corporate Tech Industry. Even though I have a gap of more than 2 years on my corporate career, I have actively kept myself informed and in practice of these changes to ensure that I remain relevant to the New Standards of Web Development and its associated tasks, as I prepare to make a comeback on my career and re-enter the workforce. I believe that in every adversity, lies an opportunity for an epic comeback story, and I'm working towards mine - gathering information, refining skillset, levelling up, Training, cultivating confidence and hunting opportunities to make it a reality in career and life. With my best efforts, and destiny on my side, I shall accomplish it in the best way possible.",
                     ],
-                    keywords: ["adversity", "opportunity", "epic comeback", "reality", "best efforts"],
+                    keywords: ["every phase of a project", "evolution of AI LLMs", "New Standards of Web Development", "adversity", "opportunity", "epic comeback", "reality", "best efforts"],
                     icon: "fa-arrows-spin"                    
                 },
             ]

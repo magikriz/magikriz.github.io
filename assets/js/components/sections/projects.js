@@ -583,11 +583,61 @@
             "Achieved a modern, responsive SPA prototype with a modular design for easy future scalability",
             "Deepened understanding of Static site builders, implemented detailed SEO"
           ],
-          notes: "Ongoing – serves as a sandbox for modern front-end skills.",
+          notes: "A full-fledged hotel website rework project for a local hotel, after having taken up full branding and marketing responsibilities from logo, website, graphic and social media.",
           icon: "fa-solid fa-hotel",
           detailImage: "hotelcaps-2.webp",
           tabName: "self"
-        }
+        },
+        {
+          id: "proj023",
+          order: 8,
+          coverImage: "magikriz-1.webp",
+          name: "Magikriz",
+          team: "Portfolio",
+          timeline: "May 2025 - July 2025",
+          link: "https://magikriz.github.io/",
+          isFeatured: false,
+          technologies: ["HTML", "SCSS", "JS", "Gulp JS", "GitHub Pages"],
+          role: "My Career Portfolio made without any external libraries using modern features and best practices of vanilla JS and CSS",
+          tasks: [
+            "Dual themed (fire and ice), fully responsive and interactive portfolio website",
+            "Choreographed custom animations and transitons using css keyframes and vanlla JS",
+            "Implemented lazy loading, optimized images, minified code using Gulp JS and deployed to GH Pages using GIT CLI"
+          ],
+          achievements: [
+            "Detailed SEO implementation and performance optimizations, form submit to Google Sheets",
+            "Fully dynamic generated sections and components based on JSON data"
+          ],
+          notes: "Every detail of this portfolio is handcrafted with care, showcasing my skills, experience and projects.",
+          icon: "fa-solid fa-code",
+          detailImage: "magikriz-2.webp",
+          tabName: "self"
+        },
+        {
+          id: "proj024",
+          order: 9,
+          coverImage: "krizzzcode-1.webp",
+          name: "KrizzzCode",
+          team: "Self / Freelance",
+          timeline: "June 2025 - Present",
+          link: "https://krizzzcode.github.io",
+          isFeatured: false,
+          technologies: ["HTML", "CSS", "JS", "Tailwind CSS", "Gsap", "GitHub Pages"],
+          role: " A personal project to showcase my GitHub repositories, open source projects, experiments and contributions",
+          tasks: [
+            "Architected a single-page responsive layout with Tailwind CSS, optimizing for mobile-first performance.",
+            "Implemented JSON-driven project loading with search, sort, and filter functionalities.",
+            "Integrated GSAP and ScrollTrigger for smooth entrance and scroll-based animations."
+          ],
+          achievements: [
+            "Totally lightweight and fast loading, dynamic and modular design with reusable components",
+            "Dual themed with dark and light mode, aesthetic, fully responsive and interactive design",
+          ],
+          notes: "Ongoing – serves as a sandbox for my web development skills.",
+          icon: "fa-brands fa-github",
+          detailImage: "krizzzcode-2.webp",
+          tabName: "self"
+        },
       ],
     };
 
@@ -715,7 +765,7 @@
             
             // === CTA BUTTON ===
             const exploreWrap = document.createElement("div");
-            exploreWrap.className = "card-explore card-cta";
+            exploreWrap.className = "card-explore card-cta circular-button";
             exploreWrap.dataset.id = item.id;
             overlay.appendChild(exploreWrap);
 
@@ -908,7 +958,7 @@
             
             // === CTA BUTTON ===
             const exploreWrap = document.createElement("div");
-            exploreWrap.className = "all-card-explore card-cta";
+            exploreWrap.className = "all-card-explore card-cta circular-button";
             exploreWrap.dataset.id = item.id;
             overlay.appendChild(exploreWrap);
 

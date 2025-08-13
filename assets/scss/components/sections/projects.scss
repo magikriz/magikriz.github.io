@@ -274,7 +274,7 @@
 
   & .featured-slide-cover::before {
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
-    box-shadow: 1rem 1rem 3rem 0px var(--primary-color) inset;
+    box-shadow: 1rem 2rem 6rem 0px var(--primary-color) inset;
     transition: all 0.3s ease;
   }
 }
@@ -780,7 +780,37 @@
 }
 
 
+.circular-button::after {
+  /* ... other styles ... */
+  animation: slideRight 1.2s ease-in-out infinite alternate;
+}
+
+.circular-button {
+  /* ... other styles ... */
+  animation: pulse-border 1.5s infinite; /* Apply the animation */
+}
+
 // KEYFRAMES LIST
+  
+
+@keyframes pulse-border {
+  0% {
+    box-shadow: 0 0 0 0 rgba(185, 185, 185, 0.5); /* Start with a faded shadow */
+  }
+  70% {
+    box-shadow: 0 0 0 .3rem rgba(0, 123, 255, 0); /* Expand and fade the shadow */
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0); /* Return to the initial state */
+  }
+}
+
+@keyframes slideRight {
+  0% { transform: translate(-50%, -50%); } /* Start at original position */
+  50% { transform: translate(calc(-50% + .1rem), -50%); } /* Move slightly to the right */
+  100% { transform: translate(-50%, -50%); } /* Return to original position */
+}
+
 
 @keyframes fontPlay {
   0% {
@@ -974,7 +1004,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 10000;
+    z-index: 10010;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -48,9 +48,9 @@
       // clickPulses array is no longer needed
       const themeColors = {
           ice: {
-              spark1: "rgba(0, 180, 255, 1)",
+              spark1: "rgba(0, 119, 255, 1)",
               spark2: "rgba(200, 250, 255, 1)",
-              pulse: "rgba(50, 200, 255, 1)"
+              pulse: "rgba(50, 163, 255, 1)"
           },
           fire: {
               spark1: "rgba(255, 80, 0, 1)",
@@ -69,6 +69,8 @@
       
       // --- New DOM Pulse Function ---
       function createDomPulse(e) {
+          const gridOg = document.querySelector(".grid-section");
+          
           const pulse = document.createElement("div");
           const size = 30 + Math.random() * 45; // Random size
           
@@ -79,7 +81,7 @@
           pulse.style.left = `${e.clientX - size / 2}px`;
           pulse.style.top = `${e.clientY - size / 2}px`;
           
-          document.body.appendChild(pulse);
+          gridOg.appendChild(pulse);
 
           // Remove the pulse element after its animation completes (1.5s)
           setTimeout(() => {
@@ -595,7 +597,7 @@
           }, (len * fxDelay + 0.5) * 1000);
           btn.addEventListener('click', () => {
             const link = document.createElement('a');
-            link.href = '/resume/krizresume.pdf';
+            link.href = 'https://github.com/user-attachments/files/21746051/kriz-resume.pdf'; 
             link.download = 'kriz-resume.pdf';
             document.body.appendChild(link);
             link.click();
@@ -643,6 +645,9 @@
           scrollButton.className = 'scroll-next';
           scrollButton.innerHTML = '<i class="fa fa-angle-down" aria-hidden="true"></i>'; 
           grid.appendChild(scrollButton);
+          scrollButton.addEventListener('click', () => {
+            App.slider.scrollToSection(1);
+          });
 
           const btn = document.getElementById('contact-btn');
           btn.addEventListener('click', () => {

@@ -242,7 +242,7 @@ $kai-glow: #6c5ce7;
 
   svg {
     fill: none;
-    stroke: var(--glow-color-active);
+    stroke: var(--switch-background-color);
     stroke-width: 7px;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -347,27 +347,34 @@ $kai-glow: #6c5ce7;
   transform-origin: right;
   transition: transform 0.5s ease;
   z-index: 1000;
+  overflow-x: hidden;
+  overflow-y: auto;
   nav ul {
     list-style: none;
     padding: 0;
     text-align: center;
+    overflow-x: hidden;
+    overflow-y: auto;
     li {
       margin: 2rem 0;
       font-size: 3rem;
       color: $light;
-      // cursor: pointer;
+      cursor: pointer;
       transition: color 0.3s ease;
       position: relative;
-      text-transform: uppercase;
+      .menuitem-text span {
+        color: var(--accent-color);
+        font-size: 2.2rem;
+      }
       &:hover {
-        color: $kai-glow;
+        color: var(--accent-color);
       }
       &::after {
         content: '';
         position: absolute;
         width: 0%;
         height: 2px;
-        background: $blue-flare;
+        background: var(--switch-background-color);
         left: 0;
         bottom: -5px;
         transition: 0.3s ease;

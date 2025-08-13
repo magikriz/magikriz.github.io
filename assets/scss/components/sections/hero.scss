@@ -539,7 +539,7 @@
   justify-content: center;
   white-space: pre-wrap;
   position: absolute;
-  bottom: 40%;
+  bottom: 42%;
   left: 50%;
   transform: translateX(-50%);
   width: max-content;
@@ -563,7 +563,7 @@
   padding-top: .4rem;
   transform: translateY(20px);
   animation: fadeInUp 0.5s ease forwards;
-  font-size: 2.6rem;
+  font-size: 2.8rem;
   font-style: italic;
   padding-right: .4rem;
 
@@ -575,7 +575,7 @@
   transform-style: preserve-3d;
   animation: spinIn 0.7s ease forwards;
   color: var(--switch-background-color);
-  font-size: 3rem;
+  font-size: 3.2rem;
   padding-right: .4rem;
   font-weight: 600;
 }
@@ -597,13 +597,12 @@
     justify-content: space-between;
     align-items: center;
     position: absolute;
-    bottom: 30%;
+    bottom: 33%;
     transform: translateX(-50%) translateY(2rem);
     left: 50%;
     overflow: hidden;
     padding: 1rem;
     transition: all 0.4s ease;
-    gap: 2rem;
     animation: showButtonWrap .5s 7s ease-out forwards;
 }
 
@@ -615,6 +614,7 @@
 
 /* Contact button styling */
 #contact-btn {
+    margin: 0 2rem;
     padding: 1.1rem 1.7rem;
     border: 2px solid var(--switch-background-color);
     background: transparent;
@@ -625,7 +625,8 @@
     position: relative;
     border-radius: 8px;
     opacity: 0;
-    transition: all 0.4s ease;
+    transition: all 0.4s ease; width: max-content;
+    width: max-content;
 }
 #contact-btn::before {
     content: "";
@@ -650,6 +651,7 @@
 }
 
 #resume-btn {
+    margin: 0 1.5rem;
     padding: 1.1rem 1.7rem;
     border: 2px solid var(--switch-background-color);
     background: transparent;
@@ -661,6 +663,7 @@
     border-radius: 8px;
     opacity: 0;
     transition: all 0.4s ease;
+    width: max-content;
 }
 #resume-btn::before {
     content: "";
@@ -715,6 +718,7 @@
   bottom: 3rem;
   left: 50%;
   transform: translateX(-50%);
+  cursor: pointer;
   background: transparent;
   border: none;
   font-size: 4rem;

@@ -33,7 +33,7 @@
         socialBox.className = 'social-box';
 
         const socials = [
-            { href: 'https://github.com/krizdev92', label: 'GitHub', icon: 'fab fa-github' },
+            { href: 'https://github.com/krizzzcode', label: 'GitHub', icon: 'fab fa-github' },
             { href: 'https://www.linkedin.com/in/kriz-live/', label: 'LinkedIn', icon: 'fab fa-linkedin-in' },
             { href: 'https://www.instagram.com/krizzzlife/', label: 'Instagram', icon: 'fab fa-instagram' },
         ];

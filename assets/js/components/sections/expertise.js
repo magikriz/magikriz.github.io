@@ -9,145 +9,165 @@
         const currentTheme = html.getAttribute('data-theme');
 
         const expertiseData = {
-          intro: "Categorically listing my core, tech, creative and other skills that build my foundation and extend into excellence.",
+          intro: "Categorically listing the core, tech, creative and other skills that build my foundation and extend into excellence.",
           hexagons: [
             {
               order: 1,
               title: "Core skills",
               icon: "fa-bullseye",
               backgroundImage:
-                "https://fastly.picsum.photos/id/115/536/354.jpg?hmac=3-7F5qr1PJG8LlfljGDJ_j8BYikIZbAbTkLltLdU1pY",
+                "",
               description:
-                "Essential interpersonal and analytical abilities that drive effective teamwork, leadership, adaptability, and precise problem-solving in fast-paced environments.",
+                "Soft skills that drive peak performance, results and productive efficiency in fast-paced professional work environments.",
               advanced: [
+                "Business Communication",
+                "Attention to Detail",
+                "Listening & Collaboration",
+                "Organizational Ability",
                 "Problem-Solving Acumen",
-                "Leadership / Management Expertise",
-              ],
-              intermediate: [
+                "Resilient & Passionate",
+                "Streamlined Vision",
+                "Presence of Mind",
                 "Situational Adaptability",
-                "Mathematical / Analytical Prowess",
+                "Management Expertise",
+                "Committing Attitude",
               ],
-              basics: [
-                "Listening / Attention to Detail",
-                "Collaborative / Committing Attitude",
-              ],
+             
               extra:
-                "Use SWOT analyses, empathy mapping, active-listening apps, and regular retrospectives to refine communication and collaboration.",
+                "My professional journey and life has thrown many different challenges before me, and facing them has tested me and helped me learn more about myself and my strengths and weaknesses.",
             },
             {
               order: 2,
               title: "Coding Basics",
               icon: "fa-code",
               backgroundImage:
-                "https://fastly.picsum.photos/id/115/536/354.jpg?hmac=3-7F5qr1PJG8LlfljGDJ_j8BYikIZbAbTkLltLdU1pY",
+                "",
               description:
-                "Fundamental markup and scripting languages forming the backbone of web pages and interactive user experiences across platforms.",
-              advanced: ["JavaScript"],
-              intermediate: ["Java","PHP"],
-              basics: ["C/C++", "Python"],
+                "Fundamental markup and scripting languages forming the backbone of web pages and other applications.",
+              advanced: [ "JavaScript, HTML, CSS, JSON" ],
+              intermediate: [ "Java","PHP", "SQL", ],
+              basics: [ "C/C++", "Python", "Bash/Shell Scripting", "XML", "YAML", ],
               extra:
-                "Follow semantic HTML best practices and use linter integrations to ensure maintainable, accessible codebases.",
+                "These languages are the foundation of my coding journey, and I have used them to build and maintain many different projects, from simple scripts to corporate client works.",
             },
             {
               order: 3,
               title: "Frontend",
               icon: "fa-display",
               backgroundImage:
-                "https://fastly.picsum.photos/id/115/536/354.jpg?hmac=3-7F5qr1PJG8LlfljGDJ_j8BYikIZbAbTkLltLdU1pY",
+                "",
               description:
-                "Client-side frameworks and libraries used to build dynamic, responsive interfaces with efficient rendering and state management patterns.",
-              advanced: ["jQuery", "REST API", "AJAX", "Async", "Angular JS", "GSAP"],
+                "Client-side technologies that I have learned, practiced and worked with on projects.",
+              advanced: ["HTML | CSS | JS", "SCSS", "jQuery", "Bootstrap", "Tailwind" , "GSAP"],
               intermediate: [
-                "Next JS",
-                "React JS",
-                "Nuxt JS",
-                "Vue 3",
                 "ES6/Typescript",
-                "Fetch API",
+                "React JS",
+                "Vue 3",
+                "Next JS",
+                "Nuxt JS",
+                "Angular JS",
+                "MUI"
               ],
               basics: [
                 "WooCommerce",
-                "Shopify"
+                "Shopify Liquid",
+                "React Native",
+                "Android App Development"
               ],
               extra:
-                "Incorporate component-driven design and isolated UI development and consistent documentation.",
+                "I have worked on many different projects, from simple static pages to complex web applications, and I have used these technologies to build responsive, interactive and user-friendly interfaces following best practices and ensuring well documented and readable code. Apart from the above, I have also worked with many different libraries, such as Slick, Fullpage, Wow, Swiper etc sliders and many others, and I have used them to to build web components, for animations and enhance the user experience and performance of my projects.",
             },
             {
               order: 4,
               title: "Design",
               icon: "fa-palette",
               backgroundImage:
-                "https://fastly.picsum.photos/id/115/536/354.jpg?hmac=3-7F5qr1PJG8LlfljGDJ_j8BYikIZbAbTkLltLdU1pY",
+                "",
               description:
-                "Structured design systems and principles that ensure cohesive, accessible, and visually compelling user experiences across devices.",
-              advanced: ["SCSS", "Bootstrap", "Tailwind"],
-              intermediate: [
-                "MUI",
+                "Structured design systems and applications that are used to design assets and UI to build visually compelling user experiences across devices and platforms.",
+              advanced: [
                 "Photoshop",
                 "Figma",
                 "Canva",
                 "Inkscape",
+                "Numerous Designing / Editing Tools",
+              ],
+              intermediate: [
+                "Coreldraw",
                 "GIMP",
               ],
-              basics: ["Coreldraw"],
+              basics: [],
               extra:
-                "Use grid layouts, accessibility audits, and design-tool plugins to maintain polish, consistency, and inclusive standards.",
+                "I have used these tools to create and edit images, graphics, logos, and other visual elements for my projects. I have also used them to design user interfaces, wireframes, and prototypes for web applications. I have a keen eye for detail and aesthetics, and I strive to create visually appealing designs and assets for all my projects.",
             },
             {
               order: 5,
               title: "Serverside",
               icon: "fa-network-wired",
               backgroundImage:
-                "https://fastly.picsum.photos/id/115/536/354.jpg?hmac=3-7F5qr1PJG8LlfljGDJ_j8BYikIZbAbTkLltLdU1pY",
+                "",
               description:
-                "Backend platforms and APIs powering data processing, business logic, storage, and integrations for scalable, secure applications.",
-              advanced: [],
-              intermediate: ["WordPress", "Firebase"],
-              basics: [
+                "Backend platforms and APIs that power data processing, business logic, storage, and integrations for scalable, secure applications.",
+              advanced: ["REST API", "AJAX", "Async/Await", "Fetch API", "JSON"],
+              intermediate: [
                 "Node JS",
+                "GraphQL",
                 "JSP",
                 "MySQL",
+                "Laravel",
+                "WordPress",
+              ],
+              basics: [
+               "Firebase"  
               ],
               extra:
-                "Active Collaborator in Projects with the Backend Teams.",
+                "Have been an Active Collaborator in Projects with the Backend Teams on a variety of tech stacks.",
             },
             {
               order: 6,
               title: "Utilities",
               icon: "fa-wrench",
               backgroundImage:
-                "https://fastly.picsum.photos/id/115/536/354.jpg?hmac=3-7F5qr1PJG8LlfljGDJ_j8BYikIZbAbTkLltLdU1pY",
+                "",
               description:
-                "Productivity and development tools that streamline workflows, version control, asset creation, and collaborative project management.",
+                "Productivity and Development tools, Task Runners, Version Control Systems, Generative AI and more that streamline workflows, asset creation, and collaborative project management from end to end.",
               advanced: ["Gulp JS", 'GIT'],
-              intermediate: ["Generative AI LLM Apps", "Webpack", "GitHub Actions", "SEO", "GA/GTM"],
+              intermediate: ["Generative AI LLM Apps", "CI/CD", "GitHub Actions", "Jira", "Webpack", "Slack | Discord", "Zoom | Teams | Meet"],
               basics: [
                 "Google Workspace",
                 "MS Office 365",
                 "Libre Office",
               ],
               extra:
-                "Automate repetitive tasks with GitHub Actions and use many different Team communication apps for seamless team collaboration.",
+                "These utilities collectively have helped me automate repetitive tasks and improve the quality and speed of my performance and completion on all stages of various projects.",
             },
             {
               order: 7,
               title: "Beyond Code",
               icon: "fa-feather",
               backgroundImage:
-                "https://fastly.picsum.photos/id/115/536/354.jpg?hmac=3-7F5qr1PJG8LlfljGDJ_j8BYikIZbAbTkLltLdU1pY",
+                "",
               description:
-                "Creative and leadership pursuits that enrich personal growth, communication skills, branding, and multimedia storytelling outside development.",
+                "Listing a few things apart from tech that I have skills and passion for, practice, follow or participate and enjoy doing.",
               advanced: [
-                "Branding/Management",
-                "Events Organization/Delegation",
+                "Digital Branding",
+                "Events Organization and Management",
+                "Creative Content Creation (Designs/Scripts/Videos)",
+                "Photography | Videography",
+                "Presentations | Public Speaking", 
+                "Everything about Sports",
+                "Engaging with Nature",
+                "Environmental Awareness",
+                "Travelling | Exploring",
+                "Vegetarian Cuisine",
+                "Festivals and Live Events",
+                "Community Engagement",
+                "Music, Books, Anime, Movies, TV Shows, Documentaries and more",
               ],
-              intermediate: [
-                "Creative (Design/Writing)",
-                "Photo/Videography & Editing",
-              ],
-              basics: ["Presentations/Elocution", "Public Speaking"],
+              intermediate: [],
+              basics: [],
               extra:
-                "Host workshops, use portfolio platforms, employ event-planning apps, and publish multimedia stories to engage communities.",
+                "I'm passionate about life and I love exploring and learning new things. Engaging in my diverse range of interests, honing my skills or just being part of these activities bring me joy and help me be an energetic well-rounded individual and that contributes to my personal and professional growth.",
             }
           ]
         };
