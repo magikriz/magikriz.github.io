@@ -1,0 +1,125 @@
+:root {
+    /* Define the core colors for the theme */
+    --fire-color-border: hsl(1, 100%, 50%);
+    --ice-color-border: hsl(245, 100%, 50%);
+
+    /* Darker base for the inner background */
+    --fire-color-inner-base: hsl(1, 80%, 12%);
+    --ice-color-inner-base: hsl(220, 80%, 13%);
+
+    /* Brighter colors for the top-layer energy wisps */
+    --fire-color-wisp: hsl(1, 100%, 35%);
+    --ice-color-wisp: hsl(210, 100%, 35%);
+
+    --bg-color: #0c040c;
+}
+
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+/* --- Main Loader Container --- */
+#kd-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    opacity: 0; /* Starts transparent for fade-in */
+    /* The user will add the 'fade-in' or 'fade-out' class */
+}
+#kd-loader.fade-in {
+    animation: fade-in 1.5s 0.5s ease-out both; /* Added delay */
+}
+#kd-loader.fade-out {
+    animation: fade-out 1s .5s ease-in both;
+}
+
+/* --- Border Effect Container --- */
+.aura-container {
+    position: absolute;
+    inset: 0;
+    border: 0.5rem solid transparent;
+    isolation: isolate;
+    overflow: hidden;
+
+    background:
+        linear-gradient(var(--bg-color), var(--bg-color)) padding-box,
+        conic-gradient(from var(--gradient-angle),
+            transparent 0%,
+            var(--fire-color-border) 5%,
+            transparent 10%,
+            transparent 50%,
+            var(--ice-color-border) 55%,
+            transparent 60%) border-box;
+
+    animation: rotate-aura 4s linear infinite;
+}
+
+/* --- Inner Effects Wrapper --- */
+/* This wrapper applies a "bloom" filter to everything inside it */
+.kd-loader-inner-effects-wrapper {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    filter: blur(12px) contrast(1.25); /* Adjusted blur for conic smoothness */
+}
+
+/* --- Refined Inner Effect Container --- */
+#kd-loader-inner-effect {
+    position: absolute;
+    inset: 0;
+}
+
+/* Layer 1: The deep, flowing background (Conic-Only) */
+#kd-loader-inner-effect .color-base {
+    position: absolute;
+    inset: -200%; /* Make it huge to hide the center point */
+    background: conic-gradient(
+        from 0deg,
+        var(--fire-color-inner-base),
+        var(--ice-color-inner-base) 50%,
+        var(--fire-color-inner-base) 100%
+    );
+    animation: rotate-base 25s linear infinite;
+}
+
+/* Layer 2: The brighter, drifting energy wisps (Conic-Only) */
+#kd-loader-inner-effect::before {
+    content: "";
+    position: absolute;
+    inset: -150%; /* Also large to avoid hard edges */
+    background: conic-gradient(
+        from 45deg, /* Offset from the base layer */
+        transparent 0%,
+        var(--fire-color-wisp) 15%,
+        transparent 30%,
+        transparent 50%,
+        var(--ice-color-wisp) 65%,
+        transparent 80%
+    );
+    animation: drift-wisps 18s ease-in-out infinite;
+}
+
+
+/* --- Keyframes --- */
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes fade-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+@keyframes rotate-aura {
+    to { --gradient-angle: 360deg; }
+}
+@keyframes rotate-base {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+@keyframes drift-wisps {
+    0% { transform: rotate(0deg); opacity: 0.8; }
+    50% { transform: rotate(-180deg) scale(1.05); opacity: 1; }
+    100% { transform: rotate(-360deg); opacity: 0.8; }
+}

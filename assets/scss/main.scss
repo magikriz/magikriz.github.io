@@ -1,0 +1,140 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0 ;
+  padding: 0 ;
+}
+
+/* 1366 common css */
+html {
+    /* 10px: easy to use with REM */
+    /* Do not change this value in any media query */
+    /* make use of CSS3 variables where required */
+	overscroll-behavior: none;
+}
+
+html {
+  font-size: 68.75%; 
+
+  @media (max-width: 1600px) {
+    font-size: 65.25%; 
+  }
+
+  // ideal screen
+  @media (max-width: 1366px) {
+    font-size: 62.5%; 
+  }
+
+  @media (max-width: 1280px) {
+    font-size: 61.75%; 
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 60.25%; 
+  }
+
+  @media (max-width: 768px) {
+    font-size: 53.75%; 
+  }
+
+  @media (max-width: 640px) {
+    font-size: 47.5%;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 40.75%;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 32.5%; 
+  }
+}
+
+
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	box-sizing:border-box;
+}
+
+html, body {
+	height: 100%;
+	// overflow: auto;
+  background-color: #0c040c;
+	&::-webkit-scrollbar {
+	  width: 0px;
+	  background: transparent;
+	}
+  
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+  
+
+header {
+	padding: px2vw(15) 0;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+body {
+	background: #0c040c;;
+	color: snow;
+	opacity: 1;
+	overscroll-behavior: none;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	display: block;
+  pointer-events: none;
+}
+
+p, li {
+  font-size: 2rem;
+  letter-spacing: .1rem;
+}
+
+
+.kd-content {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+*  {
+	font-family: 'Titillium Web';
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: inherit;
+
+  &:hover, &:active, &:focus {
+    color: initial;
+    outline: none;
+    text-decoration: none;
+  }
+}
+
+
+// Animations
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px var(--btn-glow-color);
+  }
+  100% {
+    box-shadow: 0 0 20px var(--btn-glow-color);
+  }
+}
+
+@keyframes shimmer {
+  to {
+    left: 150%;
+  }
+}

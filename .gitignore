@@ -1,0 +1,10 @@
+# Ignore all .log files
+*.log
+
+# Ignore the entire 'node_modules' directory
+node_modules/
+
+# Ignore a specific file
+package-lock.json
+package.json
+

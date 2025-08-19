@@ -1,0 +1,541 @@
+.kd-story {
+
+	background: var(--story-background-color);
+	background: var(--story-background-webkit);
+	background: var(--story-background-moz);
+	background: var(--story-background-linear);
+
+  #storyStormCanvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+
+	// background: rgb(2,0,36);
+	// background: linear-gradient(90deg, rgba(2,0,36,0.77) 0%, rgba(36,36,122,1) 35%, rgba(45,133,150,0.92) 100%);
+
+        
+  .story-bg {
+    background-image: var(--story-bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 1;
+
+    display: block;
+    width: 100vw;
+    height: 33.1vw;
+    left: 0;
+    bottom: -10vw;
+    // filter: brightness(160%) contrast(110%);
+
+    @media (orientation: portrait) {
+        
+        width: 150vw;
+        height: 49.5vw;    
+        transform: translateX(-50%);
+        left: 50%;
+        bottom: -5vw;
+
+        @media (min-aspect-ratio: 2/3) {
+            width: 100vw;
+            height: 33.1vw;
+        }
+    }    
+  }
+}
+
+.story-chakras {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    --chakra-scale: 1;
+    padding: 2rem;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+
+.chakras-list {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+// Base chakra style
+.chakra {
+  position: absolute;
+  width: 7rem;
+  height: 7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  // overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 4;
+  opacity: 0;
+  transition: all 0.3s ease;
+  box-shadow: none;
+  left: 50%;
+  // border: 2px double var(--story-pulse-border);
+  animation: fadeRise var(--fade-duration) ease var(--fade-delay) both,
+            blastOut 2s ease-in-out calc(var(--fade-duration) + var(--fade-delay)) forwards, pulseChakra 10s linear 4s infinite;;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+    opacity: 1;
+    display: block;
+    border-radius: 50%;
+    background: conic-gradient(
+      from 45deg,
+      var(--story-pulse-border) 25%,
+      var(--story-pulse-hover-bg) 50%,
+      var(--story-pulse-border) 75%,
+      var(--story-pulse-hover-bg) 100%
+    );
+    animation: ringSpinReverse 2s linear infinite;
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    transition: all 0.3s ease;
+    opacity: 1;
+    z-index: -1;
+    display: block;
+    border-radius: 50%;
+    background: conic-gradient(
+      from -45deg,
+      var(--story-pulse-border) 25%,
+      var(--story-pulse-hover-bg) 50%,
+      var(--story-pulse-border) 75%,
+      var(--story-pulse-hover-bg) 100%
+    );
+    animation: ringSpin 1s linear infinite;
+  }
+
+  // Hover / active effects
+  &:hover { 
+    transform: translateX(-50%);
+    filter: var(--story-pulse-hover-filter) !important;
+    // border-width: 4px;
+    transition: all 0.3s ease;
+  }
+
+  @for $i from 1 through 10 {
+    $delay: 0.2s;
+    $duration: 2.7s;
+    $fade-delay: $delay * $i;
+    $fade-duration: $duration - (0.2s * $i);
+
+    &:nth-child(#{$i}) {
+      --fade-delay: #{$fade-delay};
+      --fade-duration: #{$fade-duration};
+    }
+  }
+
+  &:nth-child(1) {
+    --initial-bottom: 10%;
+    --intermediate-bottom: 20%;
+    --final-bottom: 87.5%;
+    --final-left: 50%;
+  }
+
+  &:nth-child(2) {
+    --initial-bottom: 10%;
+    --intermediate-bottom: 22%;
+    --final-bottom: 75%;
+    --final-left: 30%;
+  }
+  
+  &:nth-child(3) {
+    --initial-bottom: 10%;
+    --intermediate-bottom: 24%;
+    --final-bottom: 75%;
+    --final-left: 70%;
+  }
+
+  &:nth-child(4) {
+    --initial-bottom: 10%;
+    --intermediate-bottom: 26%;
+    --final-bottom: 62.5%;
+    --final-left: 50%;
+  }
+  
+  &:nth-child(5) {
+    --initial-bottom: 10%;
+    --intermediate-bottom: 28%;
+    --final-bottom: 50%;
+    --final-left: 25%;
+  }
+
+  &:nth-child(6) {
+    --initial-bottom: 10%;
+    --intermediate-bottom: 30%;
+    --final-bottom: 50%;
+    --final-left: 75%;
+  }
+  
+  &:nth-child(7) {
+    --initial-bottom: 10%;
+    --intermediate-bottom: 32%;
+    --final-bottom: 37.5%;
+    --final-left: 35%;
+  }
+
+  &:nth-child(8) {
+    --initial-bottom: 10%;
+    --intermediate-bottom: 34%;
+    --final-bottom: 37.5%;
+    --final-left: 65%;
+  }
+
+  &:nth-child(9) {
+    --initial-bottom: 10%;
+    --intermediate-bottom: 36%;
+    --final-bottom: 25%;
+    --final-left: 20%;
+  }
+
+  &:nth-child(10) {
+    --initial-bottom: 10%;
+    --intermediate-bottom: 38%;
+    --final-bottom: 25%;
+    --final-left: 80%;
+  }
+  
+}
+
+
+// Keyframes
+
+@keyframes ringSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ringSpinReverse {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes fadeRise {
+  0% {
+    opacity: 0;
+    bottom: var(--initial-bottom);
+    width: 2.6rem;
+    height: 2.6rem;
+    font-size: 1.2rem;
+    border-width: 0.1rem;
+    filter: brightness(110%) saturate(2);
+  }
+  100% {
+    opacity: 0.5;
+    transform: translateX(-50%);
+    bottom: var(--intermediate-bottom);
+    width: 3.2rem;
+    height: 3.2rem;
+    font-size: 1.4rem;
+    border-width: 0.2rem;
+    filter: brightness(110%) saturate(2);
+  }
+}
+
+@keyframes blastOut {
+  0% {
+    bottom: var(--intermediate-bottom);
+    width: 3.2rem;
+    height: 3.2rem;
+    font-size: 1.4rem;
+    border-width: 0.2rem;
+    opacity: 0.5;
+    filter: brightness(110%) saturate(2);
+  }
+  20% {
+    opacity: 1;
+    filter: brightness(110%) saturate(2);
+  }
+  50% {
+    width: 5rem;
+    height: 5rem;
+    font-size: 2.2rem;
+    left: calc(var(--final-left));
+    bottom: calc(var(--final-bottom) - 2rem);
+    filter: brightness(110%) saturate(2);
+  }
+  70% {
+    box-shadow: none;
+    filter: brightness(100%) saturate(1);
+  }
+  85% {
+    box-shadow: 0 0 2rem 1rem var(--accent-color), inset 0 0 2rem 2rem var(--accent-color) ;
+    filter: brightness(140%) saturate(2.5);
+  }
+  100% {
+    left: var(--final-left);
+    bottom: var(--final-bottom);
+    width: 6rem;
+    height: 6rem;
+    font-size: 2.7rem;
+    border-width: 3px;
+    opacity: 1;
+    box-shadow: 0 0 2rem 1rem var(--accent-color);
+    filter: brightness(105%) saturate(1.5);
+  }
+}
+
+@keyframes pulseChakra {
+    0% { 
+        transform: translate(-50%) (0deg);
+      }
+    100% { 
+        transform: translate(-50%) rotate(360deg);
+    }
+}
+
+@keyframes pulseInner {
+    0%, 100% { 
+        box-shadow: inset 0 0 10px 15px var(--story-pulse-shadow); 
+      }
+      50% { 
+        box-shadow: none;          
+    }
+}
+
+.chakra-inner {
+    font-size: inherit;
+    position: absolute;
+    color: var(--story-pulse-border);
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    display: flex;
+    z-index: 5;
+    border: 2px dotted var(--story-pulse-border);
+    justify-content: center;
+    align-items: center;
+    background: var(--story-pulse-bg);
+    background: radial-gradient(circle at center, var(--story-pulse-bg), var(--story-pulse-hover-bg));
+    animation: pulseInner 3s linear infinite;
+}
+
+.chakras-popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10010;
+  transition: opacity 0.3s ease;
+  overflow-y: hidden;
+  touch-action: pan-y;
+
+  &.active {
+    display: flex;
+    animation: popupFadeIn 0.4s ease forwards;
+    opacity: 1;
+  }
+  .chakra-popup-close {
+    position: absolute;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    z-index: 10002;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--story-pulse-bg);
+    transition: all 0.3s ease;
+  }
+
+  .chakra-popup-left,
+  .chakra-popup-right {
+    position: absolute;
+    top: 50%;
+    width: 4rem;
+    height: 10rem;
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    z-index: 10002;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4.5rem;
+    font-weight: 600;
+    color: var(--story-pulse-hover-bg);
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+  }
+
+  .chakra-popup-left { 
+    left: 3%;
+    box-shadow: rgba(0, 0, 0, 0.35) 100px 0px 50px -20px inset;
+    @media screen and (min-aspect-ratio: 2/3) {
+        left: 10%;
+    }
+    @media screen and (min-aspect-ratio: 4/3) {
+        left: 1%;
+    }
+}
+  .chakra-popup-right { 
+    left: calc(97% - 4rem); 
+    box-shadow: rgba(0, 0, 0, 0.35) -100px 0px 50px -20px inset;
+    @media screen and (min-aspect-ratio: 2/3) {
+        left: calc(90% - 4rem);
+    }
+    @media screen and (min-aspect-ratio: 4/3) {
+        left: calc(99% - 4rem);
+    }
+}
+  .chakra-popup-close { left: 50%; transform: translate(-50%); top: 2% }
+
+  .chakras-content {
+    background: #111;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 75%;
+    color: var(--story-pulse-bg);
+    // animation: slideContent 0.5s ease;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.7);
+    max-height: 85%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.5rem;
+    -webkit-overflow-scrolling: touch; /* For smooth iOS scrolling */
+
+    &:focus {
+        border: none;
+        outline: none;
+    }
+
+    @media screen and (min-aspect-ratio: 2/3) {
+        width: 55%;
+    }
+
+    @media screen and (min-aspect-ratio: 4/3) {
+        width: 90%;
+        flex-direction: row;
+        justify-content: center;
+
+        .chakras-text-content,
+        .chakras-image-content {
+            flex: 1;
+            padding: 1%;
+        }
+    }
+
+
+    img {
+      width: 100%;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 0 0.7rem var(--primary-color));
+      border: 2px solid var(--primary-color);
+    }
+
+    hr {
+      border: none;
+      height: 0.3rem;
+      background: var(--primary-color);
+      margin: 1rem 0;
+    }
+
+    .chakras-title {
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+      color: var(--text-color);
+    }
+
+    .chakras-description {
+      font-size: 1.8rem;
+      line-height: 1.6;
+      color: var(--text-color);
+      strong {
+        color: var(--story-pulse-hover-bg);
+      }
+    }
+  }
+}
+
+.chakras-content::-webkit-scrollbar {
+  width: 0.4rem;
+}
+.chakras-content::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 1rem;
+}
+
+.fade-rotate-in {
+  animation: fadeRotateIn 0.6s ease both;
+
+  & * {
+    opacity: inherit;
+  }
+}
+
+@keyframes fadeRotateIn {
+  0% {
+    // opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    // opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.fade-rotate-out {
+  animation: fadeRotateOut 0.3s ease forwards;
+}
+
+@keyframes fadeRotateOut {
+  0% {
+    transform: translateX(0);
+    // opacity: 1;
+  }
+  100% {
+    transform: translateX(-20px);
+    // opacity: 0;
+  }
+}
+
+#storyStormCanvas {
+  transition: all 0.5s ease-out;
+  opacity: 0;
+}
