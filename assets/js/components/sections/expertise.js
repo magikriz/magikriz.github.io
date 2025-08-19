@@ -58,7 +58,7 @@
                 "",
               description:
                 "Client-side technologies that I have learned, practiced and worked with on projects.",
-              advanced: ["HTML | CSS | JS", "SCSS", "jQuery", "Bootstrap", "Tailwind" , "GSAP"],
+              advanced: ["HTML | CSS | JS", "SCSS", "jQuery", "Bootstrap", "Tailwind" , "GSAP", "AJAX", "Fetch API", "JSON"],
               intermediate: [
                 "ES6/Typescript",
                 "React JS",
@@ -108,10 +108,9 @@
                 "",
               description:
                 "Backend platforms and APIs that power data processing, business logic, storage, and integrations for scalable, secure applications.",
-              advanced: ["REST API", "AJAX", "Async/Await", "Fetch API", "JSON"],
+              advanced: ["REST API", "GraphQL"],
               intermediate: [
                 "Node JS",
-                "GraphQL",
                 "JSP",
                 "MySQL",
                 "Laravel",
